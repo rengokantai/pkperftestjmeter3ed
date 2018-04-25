@@ -19,3 +19,13 @@ file must smaller than 1mb, file must in bin folder
 
 You can add a ViewTree Listener and examine the response output after playing back the
 recording.
+
+
+
+### Posting JSON data
+note
+- Rest is a simple stateless architecture that generally runs over HTTP/HTTPS.
+- Requests and responses are built around the transfer of representations of resources.
+
+- Flexibility is provided by assigning resources their own unique URIs. Since each operation
+has a specific meaning, REST avoids ambiquity.
