@@ -14,3 +14,8 @@ accomplish business functionality.
 
 ### Handling file uploads
 file must smaller than 1mb, file must in bin folder
+
+### Handling file downloads
+
+You can add a ViewTree Listener and examine the response output after playing back the
+recording.
