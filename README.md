@@ -34,7 +34,7 @@ has a specific meaning, REST avoids ambiquity.
 steps:
 - Launch Jmeter
 - Add a thread group to the test plan
-- Add an HTTP Request Sampler component to the thread group
+- Add an __HTTP Request Sampler__ component to the thread group
 - Under HTTP Request, change implementation to HTTPClient4
 - Fill the prperties of the HTTP Request Sampler component,as follows
 - Add request body(json)
@@ -46,3 +46,32 @@ steps:
 - Save the test plan
 
 
+### Reading JSON data
+steps:
+- Launch JMeter.
+- Add a thread group to the test plan
+- Add a __HTTP Request Sampler__ to the thread group
+- Under HTTP Request, change implementation to HttpClient4.
+- Fill the properties of the HTTP Request Sampler, as follows
+  - server name or IP
+  - Method `GET`
+  - Path:
+
+### Using JSR223 PostProcessor
+When dealing with more complicated JSON structures, you might find that the regular expression exractor doesnot
+remove it. You might struggle to come up with the right regular expression to extract all the info you need.
+
+steps:
+- Launch JMeter
+- Add a thread group
+```
+eval('var response = ' + prev.getResponseDataAsString()); 
+ 
+vars.put("jokes_cnt", response.value.length); 
+ 
+for (var i = 0; i <= response.value.length; i++)       
+{            
+    var x = response.value[i]; 
+   vars.put("joke_" + i, x.joke); 
+} 
+```
