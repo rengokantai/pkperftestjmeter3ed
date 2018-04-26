@@ -29,3 +29,20 @@ note
 
 - Flexibility is provided by assigning resources their own unique URIs. Since each operation
 has a specific meaning, REST avoids ambiquity.
+
+
+steps:
+- Launch Jmeter
+- Add a thread group to the test plan
+- Add an HTTP Request Sampler component to the thread group
+- Under HTTP Request, change implementation to HTTPClient4
+- Fill the prperties of the HTTP Request Sampler component,as follows
+- Add request body(json)
+- Add an HTTP Header Manager component to the HTTP Request Sampler component(right-click on HTTP)
+- Add a request header with the following
+  - Name: Content-Type
+  - Value: application-json
+- Add a View Results Tree Listener to the thread group (right-click on thread group and navigate to Add Listener | View Results Tree)
+- Save the test plan
+
+
