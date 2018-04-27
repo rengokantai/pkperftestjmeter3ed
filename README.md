@@ -75,3 +75,10 @@ for (var i = 0; i <= response.value.length; i++)
    vars.put("joke_" + i, x.joke); 
 } 
 ```
+
+
+
+### Handling XML responses
+Another structure you may encounter as you build test plans is XML.  
+Some websites may hand off XML as their response to certain calls.  
+XML allows you to describe object graphs in a different format than JSON does.
